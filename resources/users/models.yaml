@@ -1,0 +1,8 @@
+CustomerInput:
+  allOf:
+    - type: object
+      properties:
+        email:
+          nullable: true
+          type: string
+          format: email

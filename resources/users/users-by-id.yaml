@@ -1,0 +1,14 @@
+parameters:
+  - $ref: "../parameters.yaml#/parameters/id"
+get:
+  summary: Get User
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: "./models.yaml#/CustomerInput"
+    401:
+      $ref: "../responses.yaml#/responses/UnauthorizedError"

@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Customers
+  summary: Create customer
+  operationId: create_customer
+  description: |
+    this endpoint creates a customer using JWT for base values,
+    as well as optional values to
+  requestBody:
+    description: Customer to add
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: './models.yaml#/CustomerInput'
+  responses:
+    201:
+      $ref: '../responses.yaml#/responses/CreatedDefault'
+    400:
+      $ref: '../responses.yaml#/responses/BadRequest'
+    401:
+      $ref: '../responses.yaml#/responses/UnauthorizedError'
+    404:
+      $ref: '../responses.yaml#/responses/NotFound'
+    409:
+      $ref: '../responses.yaml#/responses/Conflict'

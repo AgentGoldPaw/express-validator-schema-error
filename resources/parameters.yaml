@@ -1,0 +1,52 @@
+parameters:
+  reassign_override:
+    in: query
+    name: reassign_override
+    description: |
+      prompts the server to automagically reassign a record. (invalidate)
+      and create new record
+    required: false
+    schema:
+      type: boolean
+  id:
+    name: uuid
+    in: path
+    description: unique id of the record
+    required: true
+    schema:
+      type: string
+      format: uuid
+  something:
+    name: barcode
+    in: path
+    description: unique id for inventory tracking
+    required: true
+    schema:
+      type: string
+      minLength: 1
+      maxLength: 255
+  page:
+    name: page
+    in: query
+    description: Page of results to return (for pagination)
+    required: false
+    schema:
+      type: integer
+      minimum: 0
+  limit:
+    name: limit
+    in: query
+    description: Number of records to return per page (for pagination)
+    required: false
+    schema:
+      type: integer
+      minimum: 0
+      maximum: 1000000
+  valid:
+    name: valid
+    in: query
+    description: Whether to show invalidated records
+    required: false
+    schema:
+      type: boolean
+      example: true

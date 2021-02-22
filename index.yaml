@@ -1,0 +1,9 @@
+openapi: 3.0.0
+info:
+  description: |
+    Api
+paths:
+  /v1/users:
+    $ref: "./resources/users/users.yaml"
+  /v1/users/{uuid}:
+    $ref: "./resources/users/users-by-id.yaml"
